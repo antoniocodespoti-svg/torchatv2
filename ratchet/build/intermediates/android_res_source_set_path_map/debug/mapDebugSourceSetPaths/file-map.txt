@@ -1,9 +1,0 @@
-com.example.torchatv2.ratchet-pngs-0 C:\Users\Antonio\AndroidStudioProjects\TorChatV2\ratchet\build\generated\res\pngs\debug
-com.example.torchatv2.ratchet-updated_navigation_xml-1 C:\Users\Antonio\AndroidStudioProjects\TorChatV2\ratchet\build\generated\updated_navigation_xml\debug
-com.example.torchatv2.ratchet-mergeDebugResources-2 C:\Users\Antonio\AndroidStudioProjects\TorChatV2\ratchet\build\intermediates\incremental\debug\mergeDebugResources\merged.dir
-com.example.torchatv2.ratchet-mergeDebugResources-3 C:\Users\Antonio\AndroidStudioProjects\TorChatV2\ratchet\build\intermediates\incremental\debug\mergeDebugResources\stripped.dir
-com.example.torchatv2.ratchet-debug-4 C:\Users\Antonio\AndroidStudioProjects\TorChatV2\ratchet\build\intermediates\merged_res\debug\mergeDebugResources
-com.example.torchatv2.ratchet-debug-5 C:\Users\Antonio\AndroidStudioProjects\TorChatV2\ratchet\build\intermediates\packaged_res\debug\packageDebugResources
-com.example.torchatv2.ratchet-debug-6 C:\Users\Antonio\AndroidStudioProjects\TorChatV2\ratchet\src\debug\res
-com.example.torchatv2.ratchet-main-7 C:\Users\Antonio\AndroidStudioProjects\TorChatV2\ratchet\src\main\res
-gradleHome-0 C:\Users\Antonio\.gradle

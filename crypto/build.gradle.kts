@@ -23,6 +23,12 @@ android {
 dependencies {
     implementation(project(":common"))
     implementation(libs.kotlinx.coroutines.core)
+    
+    // Cryptography - Isolated
+    implementation(libs.bouncycastle.bcprov)
+    implementation(libs.tink.android)
+    
+    testImplementation(libs.junit)
 }
 
 detekt {
