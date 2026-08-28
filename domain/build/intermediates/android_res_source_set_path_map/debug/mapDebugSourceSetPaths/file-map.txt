@@ -1,0 +1,9 @@
+com.example.torchatv2.domain-pngs-0 C:\Users\Antonio\AndroidStudioProjects\TorChatV2\domain\build\generated\res\pngs\debug
+com.example.torchatv2.domain-updated_navigation_xml-1 C:\Users\Antonio\AndroidStudioProjects\TorChatV2\domain\build\generated\updated_navigation_xml\debug
+com.example.torchatv2.domain-mergeDebugResources-2 C:\Users\Antonio\AndroidStudioProjects\TorChatV2\domain\build\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.example.torchatv2.domain-mergeDebugResources-3 C:\Users\Antonio\AndroidStudioProjects\TorChatV2\domain\build\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.example.torchatv2.domain-debug-4 C:\Users\Antonio\AndroidStudioProjects\TorChatV2\domain\build\intermediates\merged_res\debug\mergeDebugResources
+com.example.torchatv2.domain-debug-5 C:\Users\Antonio\AndroidStudioProjects\TorChatV2\domain\build\intermediates\packaged_res\debug\packageDebugResources
+com.example.torchatv2.domain-debug-6 C:\Users\Antonio\AndroidStudioProjects\TorChatV2\domain\src\debug\res
+com.example.torchatv2.domain-main-7 C:\Users\Antonio\AndroidStudioProjects\TorChatV2\domain\src\main\res
+gradleHome-0 C:\Users\Antonio\.gradle

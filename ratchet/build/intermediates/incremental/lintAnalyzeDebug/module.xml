@@ -1,0 +1,20 @@
+<lint-module
+    format="1"
+    dir="C:\Users\Antonio\AndroidStudioProjects\TorChatV2\ratchet"
+    name=":ratchet"
+    type="LIBRARY"
+    maven="TorChatV2:ratchet:unspecified"
+    agpVersion="9.3.2"
+    buildFolder="build"
+    bootClassPath="C:\Users\Antonio\AppData\Local\Android\Sdk\platforms\android-36\android.jar;C:\Users\Antonio\AppData\Local\Android\Sdk\build-tools\36.0.0\core-lambda-stubs.jar"
+    javaSourceLevel="17"
+    compileTarget="android-36"
+    neverShrinking="true"
+    highlightGradualR8Api="false">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="debug"/>
+</lint-module>
