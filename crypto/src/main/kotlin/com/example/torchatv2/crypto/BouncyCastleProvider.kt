@@ -1,6 +1,8 @@
 package com.example.torchatv2.crypto
 
-import org.bouncycastle.math.ec.rfc7748.X25519
+import org.bouncycastle.crypto.agreement.X25519Agreement
+import org.bouncycastle.crypto.params.X25519PrivateKeyParameters
+import org.bouncycastle.crypto.params.X25519PublicKeyParameters
 import org.bouncycastle.math.ec.rfc8032.Ed25519
 import java.security.SecureRandom
 import java.util.Arrays
@@ -28,9 +30,10 @@ class BouncyCastleKeyPairGenerator(
     }
 
     override fun generateX25519KeyPairFromSeed(seed: ByteArray): X25519KeyPair {
-        val publicKey = ByteArray(32)
-        X25519.generatePublicKey(seed, 0, publicKey, 0)
-        return X25519KeyPair(X25519PrivateKey(seed), X25519PublicKey(publicKey))
+        // X25519PrivateKeyParameters handles clamping and derivation correctly
+        val privParams = X25519PrivateKeyParameters(seed, 0)
+        val pubParams = privParams.generatePublicKey()
+        return X25519KeyPair(X25519PrivateKey(seed), X25519PublicKey(pubParams.encoded))
     }
 }
 
@@ -40,10 +43,15 @@ class BouncyCastleKeyAgreementProvider : KeyAgreementProvider {
         publicKey: X25519PublicKey
     ): ByteArray {
         return try {
-            val secret = ByteArray(32)
-            if (!X25519.calculateAgreement(privateKey.copyBytes(), 0, publicKey.copyBytes(), 0, secret, 0)) {
-                throw CryptoError.KeyAgreementError
-            }
+            val agreement = X25519Agreement()
+            // Using Parameters API to ensure RFC 7748 compliance (clamping, etc.)
+            val privParams = X25519PrivateKeyParameters(privateKey.copyBytes(), 0)
+            val pubParams = X25519PublicKeyParameters(publicKey.copyBytes(), 0)
+            
+            agreement.init(privParams)
+            val secret = ByteArray(agreement.agreementSize)
+            agreement.calculateAgreement(pubParams, secret, 0)
+            
             if (isAllZero(secret)) {
                 Arrays.fill(secret, 0.toByte())
                 throw CryptoError.KeyAgreementError
