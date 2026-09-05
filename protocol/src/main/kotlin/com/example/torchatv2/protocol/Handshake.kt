@@ -21,7 +21,8 @@ data class HandshakeResult(
     val rootKey: ByteArray,
     val sessionId: ByteArray,
     val remotePeerIdentity: PeerIdentity,
-    val initialRemoteRatchetKey: X25519PublicKey
+    val initialRemoteRatchetKey: X25519PublicKey,
+    val localHandshakeKeyPair: X25519KeyPair
 )
 
 private const val VERSION: Byte = 0x01
@@ -121,7 +122,7 @@ class HandshakeInitiator(
             val rootKey = hkdfProvider.expand(sessionSecret, "TC-V1-RootKey".toByteArray(Charsets.UTF_8), 32)
             val sessionId = hkdfProvider.expand(sessionSecret, "TC-V1-SessionID".toByteArray(Charsets.UTF_8), 16)
 
-            this.result = HandshakeResult(rootKey, sessionId, peer, ekbPub)
+            this.result = HandshakeResult(rootKey, sessionId, peer, ekbPub, eka!!)
             
             // Zeroization
             Arrays.fill(dh1, 0)
@@ -255,7 +256,7 @@ class HandshakeResponder(
             val rootKey = hkdfProvider.expand(sessionSecret, "TC-V1-RootKey".toByteArray(Charsets.UTF_8), 32)
             val sessionId = hkdfProvider.expand(sessionSecret, "TC-V1-SessionID".toByteArray(Charsets.UTF_8), 16)
             
-            this.result = HandshakeResult(rootKey, sessionId, peer!!, ekaPub!!)
+            this.result = HandshakeResult(rootKey, sessionId, peer!!, ekaPub!!, ekb!!)
             
             // Zeroization
             Arrays.fill(handshakeSecret!!, 0)
