@@ -21,9 +21,11 @@ android {
 }
 
 dependencies {
-    implementation(project(":crypto"))
     implementation(project(":common"))
+    implementation(project(":crypto"))
     implementation(libs.kotlinx.coroutines.core)
+    
+    testImplementation(libs.junit)
 }
 
 detekt {

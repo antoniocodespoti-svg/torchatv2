@@ -24,7 +24,11 @@ android {
 dependencies {
     implementation(project(":ratchet"))
     implementation(project(":common"))
+    implementation(project(":crypto"))
+    implementation(project(":domain"))
     implementation(libs.kotlinx.serialization.json)
+    
+    testImplementation(libs.junit)
 }
 
 detekt {

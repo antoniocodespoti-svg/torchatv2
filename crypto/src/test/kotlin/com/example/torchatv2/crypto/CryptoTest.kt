@@ -37,9 +37,9 @@ class CryptoTest {
     @Test
     fun testRFC7748_X25519() {
         val aliceScalar = Hex.decode("77076d0a7318a57d3c16c17251b26645df4c2f87ebc0992ab177fba51db92c2a")
-        val bobPublicU = Hex.decode("de9edb7d7b7dc1b4d35b61c2ece435373f8343c85b75975309bbac44e2413036")
+        val bobPublicU = Hex.decode("de9edb7d7b7dc1b4d35b61c2ece435373f8343c85b78674dadfc7e146f882b4f")
         val expectedAlicePub = Hex.decode("8520f0098930a754748b7ddcb43ef75a0dbf3a0d26381af4eba4a98eaa9b4e6a")
-        val expectedSharedSecret = Hex.decode("4a5d9d5ba4ce2de1728e3bf480350f25e07a21c4593c447e452d699765063f5e")
+        val expectedSharedSecret = Hex.decode("4a5d9d5ba4ce2de1728e3bf480350f25e07e21c947d19e3376f09b3c1e161742")
 
         // 1. Test Public Key Derivation
         val aliceKeyPair = keyGenerator.generateX25519KeyPairFromSeed(aliceScalar)

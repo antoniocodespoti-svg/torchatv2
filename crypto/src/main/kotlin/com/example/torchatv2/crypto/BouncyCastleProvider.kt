@@ -43,21 +43,21 @@ class BouncyCastleKeyAgreementProvider : KeyAgreementProvider {
         publicKey: X25519PublicKey
     ): ByteArray {
         return try {
-            val agreement = X25519Agreement()
-            // Using Parameters API to ensure RFC 7748 compliance (clamping, etc.)
             val privParams = X25519PrivateKeyParameters(privateKey.copyBytes(), 0)
             val pubParams = X25519PublicKeyParameters(publicKey.copyBytes(), 0)
-            
+
+            val agreement = X25519Agreement()
             agreement.init(privParams)
             val secret = ByteArray(agreement.agreementSize)
             agreement.calculateAgreement(pubParams, secret, 0)
-            
+
             if (isAllZero(secret)) {
                 Arrays.fill(secret, 0.toByte())
                 throw CryptoError.KeyAgreementError
             }
             secret
         } catch (e: Exception) {
+            if (e is CryptoError) throw e
             throw CryptoError.KeyAgreementError
         }
     }
