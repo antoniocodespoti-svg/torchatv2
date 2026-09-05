@@ -24,6 +24,8 @@ dependencies {
     implementation(project(":protocol"))
     implementation(project(":common"))
     implementation(libs.kotlinx.coroutines.core)
+
+    testImplementation(libs.junit)
 }
 
 detekt {
