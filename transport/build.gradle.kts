@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.example.torchatv2.transport"
-    compileSdk = 36
+    compileSdk = 37
     defaultConfig {
         minSdk = 26
     }
@@ -22,8 +22,14 @@ android {
 
 dependencies {
     implementation(project(":protocol"))
+    implementation(project(":domain"))
+    implementation(project(":crypto"))
     implementation(project(":common"))
     implementation(libs.kotlinx.coroutines.core)
+    
+    // Tor implementation
+    implementation(libs.torandroid)
+    implementation(libs.jtorctl)
 
     testImplementation(libs.junit)
 }

@@ -14,6 +14,8 @@ archUnit = "1.2.1"
 detekt = "1.23.5"
 bouncyCastle = "1.85.2"
 tink = "1.15.0"
+torAndroid = "0.4.9.11"
+jtorctl = "0.4.5.7"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -44,6 +46,10 @@ tink-android = { group = "com.google.crypto.tink", name = "tink-android", versio
 
 # Architecture Testing
 archunit = { group = "com.tngtech.archunit", name = "archunit", version.ref = "archUnit" }
+
+# Tor
+torandroid = { group = "info.guardianproject", name = "tor-android", version.ref = "torAndroid" }
+jtorctl = { group = "info.guardianproject", name = "jtorctl", version.ref = "jtorctl" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

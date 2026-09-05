@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.example.torchatv2.domain"
-    compileSdk = 36
+    compileSdk = 37
     defaultConfig {
         minSdk = 26
     }
